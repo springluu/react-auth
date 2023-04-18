@@ -1,0 +1,113 @@
+$primary-500: #EA6C00;
+$primary-400: #FF963C;
+$primary-300-400: linear-gradient(180deg, #FFCC21 0%, #FF963C 100%); 
+$primary-300: #FFCC21;
+$secondary: #8FE9D0;
+$dark-600: #2E2E2E;
+$dark-500: #414141;
+$dark-400: #777777;
+$white: #fff;
+$white-300: #F2F2F2;
+
+@font-face {
+    font-family: 'Hiragino Kaku Gothic Pro';
+    src: url('../fonts/HIRAGINOPATCH/fpa.inf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    background: $dark-500;
+}
+.ml-auto {
+    margin-left: auto !important;
+}
+.mr-auto {
+    margin-right: auto !important;
+}
+.app-container {
+    font-family: 'Hiragino Kaku Gothic Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 23px;
+    letter-spacing: 0px;
+    text-align: left;
+    background: $white-300;
+    color: $dark-500;
+}
+.main {
+    min-height: calc(100vh - 200px);
+}
+.header, .footer {
+    background: $dark-500;
+    .nav-item {
+        color: $white;
+        &.active, &:hover {
+            color: $primary-400;
+        }
+    }
+}
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.footer {
+    .nav-item {
+        margin-right: 40px;
+    }
+}
+.header {
+    .nav-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        &:not(.logo) {
+            margin-left: 40px;
+        }
+        &:not(.logo) svg {
+            margin-right: 5px;
+            height: 22px;
+        }
+        .count {
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: $primary-500;
+            color: $white;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 18px;
+            top: 5px;
+        }
+    }
+    .menu {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 9;
+        background: $dark-400;
+        width: 280px;
+        .navbar-nav {
+            flex-wrap: wrap;
+        }
+        .nav-item {
+            border-bottom: 1px solid rgba($color: $white, $alpha: 0.15);
+            width: 100%;
+            margin: 0;
+            padding: 10px 15px;
+        }
+    }
+}
+.hexagon {
+    width: 120px;
+    height: 100px;
+    background-color: $primary-300-400;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
