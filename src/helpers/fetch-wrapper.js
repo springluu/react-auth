@@ -1,4 +1,4 @@
-import { store, authActions } from 'store'
+import { store, authActions } from 'stores'
 
 export const fetchWrapper = {
     get: request('GET'),

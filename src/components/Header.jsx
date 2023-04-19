@@ -1,22 +1,19 @@
 import { NavLink } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useState } from 'react';
-import { authActions } from 'store'
 import { Menu } from './Menu'
-import { ReactComponent as Logo } from '../asset/svg/logo.svg'
-import { ReactComponent as Memo } from '../asset/svg/icon_memo.svg'
-import { ReactComponent as Challenge } from '../asset/svg/icon_challenge.svg'
-import { ReactComponent as Info } from '../asset/svg/icon_info.svg'
-import { ReactComponent as IconMenu } from '../asset/svg/icon_menu.svg'
-import { ReactComponent as Close } from '../asset/svg/icon_close.svg'
+import { ReactComponent as Logo } from '../assets/svgs/logo.svg'
+import { ReactComponent as Memo } from '../assets/svgs/icon_memo.svg'
+import { ReactComponent as Challenge } from '../assets/svgs/icon_challenge.svg'
+import { ReactComponent as Info } from '../assets/svgs/icon_info.svg'
+import { ReactComponent as IconMenu } from '../assets/svgs/icon_menu.svg'
+import { ReactComponent as Close } from '../assets/svgs/icon_close.svg'
 
 export { Header }
 
 function Header() {
     const [menu, setMenu] = useState();
     const auth = useSelector(x => x.auth.value)
-    const dispatch = useDispatch()
-    const logout = () => dispatch(authActions.logout())
     const openMenu = () => {
         setMenu(!menu)
     }

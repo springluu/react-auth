@@ -1,0 +1,324 @@
+$primary-500: #EA6C00;
+$primary-400: #FF963C;
+$primary-300-400: linear-gradient(180deg, #FFCC21 0%, #FF963C 100%);
+$primary-300: #FFCC21;
+$secondary: #8FE9D0;
+$dark-600: #2E2E2E;
+$dark-500: #414141;
+$dark-400: #777777;
+$white: #fff;
+$white-300: #F2F2F2;
+
+@font-face {
+    font-family: 'Hiragino Kaku Gothic Pro';
+    src: url('../fonts/HIRAGINOPATCH/fpa.inf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    height: 100%;
+    background: $dark-500;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+.btn {
+    cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 960px;
+    }
+}
+
+.ml-auto {
+    margin-left: auto !important;
+}
+
+.mr-auto {
+    margin-right: auto !important;
+}
+
+.app-container {
+    font-family: 'Hiragino Kaku Gothic Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 23px;
+    letter-spacing: 0px;
+    text-align: left;
+    background: $white-300;
+    color: $dark-500;
+}
+
+.main {
+    min-height: calc(100vh - 200px);
+}
+
+.header,
+.footer {
+    background: $dark-500;
+
+    .nav-item {
+        color: $white;
+
+        &.active,
+        &:hover {
+            color: $primary-400;
+        }
+    }
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.footer {
+    .nav-item {
+        margin-right: 40px;
+    }
+}
+
+.header {
+    .nav-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &:not(.logo) {
+            margin-left: 40px;
+        }
+
+        &:not(.logo) svg {
+            margin-right: 5px;
+            height: 22px;
+        }
+
+        .count {
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: $primary-500;
+            color: $white;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 18px;
+            top: 5px;
+        }
+    }
+
+    .menu {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 9;
+        background: $dark-400;
+        width: 280px;
+
+        .navbar-nav {
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            border-bottom: 1px solid rgba($color: $white, $alpha: 0.15);
+            width: 100%;
+            margin: 0;
+            padding: 10px 15px;
+        }
+    }
+}
+
+.hexagon {
+    width: 116px;
+    height: 134px;
+    background: $primary-300-400;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 1;
+
+    svg {
+        height: 45px;
+    }
+
+    color: $white;
+}
+
+.home {
+    padding-bottom: 60px;
+
+    .section-1 {
+        .section-left {
+            height: 312px;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            .content {
+                position: absolute;
+                width: 181px;
+                height: 181px;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%;
+                background: #FFFFFF;
+                border-radius: 50%;
+            }
+        }
+
+        .section-right {
+            padding: 10px 15px 15px 30px;
+            flex: 1;
+            height: 312px;
+            width: 100%;
+            background: $dark-600;
+
+            >canvas {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .section-2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+        max-width: 800px;
+    }
+}
+
+.records {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -4px;
+
+    .record {
+        display: flex;
+        position: relative;
+        padding: 0 4px;
+        margin-bottom: 8px;
+        width: 25%;
+
+        .content {
+            position: absolute;
+            left: 4px;
+            bottom: 0;
+            background: $primary-300;
+            color: $white;
+            padding: 5px 8px;
+            font-size: 15px;
+        }
+    }
+}
+
+.load-more {
+    width: 100%;
+    margin-top: 22px;
+    text-align: center;
+
+    &.loading {
+        .btn-load-more {
+            cursor: default;
+            pointer-events: none;
+        }
+    }
+
+    .btn-load-more {
+        background: $primary-300-400;
+        color: $white;
+        padding: 14px 20px;
+        font-size: 18px;
+        border-radius: 3px;
+    }
+}
+
+.btn-back-to-top {
+    position: fixed;
+    right: 15px;
+    top: 45%;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms;
+
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+.chart {
+    display: inline-block;
+    color: #999;
+    text-align: center;
+    position: relative;
+}
+
+svg .outer {
+    stroke: #f26f21;
+}
+
+.outer {
+    fill: transparent;
+    /*allows transparency for inner circle*/
+    stroke: #333;
+    stroke-width: 20;
+    /*width of animated percent*/
+    stroke-dasharray: 534;
+    transition: stroke-dashoffset 1s;
+    -webkit-animation-play-state: running;
+}
+
+.number {
+    display: block;
+    font-size: 44px;
+}
+
+.chart:hover .outer {
+    stroke-dashoffset: 534 !important;
+    /*specifies distance into pattern to start dash*/
+    -webkit-animation-play-state: paused;
+}
+
+/*Set initial animation values*/
+.chart[data-percent='75'] .outer {
+    stroke-dashoffset: 124;
+    /*stops it at correct point*/
+    animation: show75 2s;
+}
+
+/* Begin initial animation */
+@keyframes show75 {
+    from {
+        stroke-dashoffset: 537;
+    }
+
+    to {
+        stroke-dashoffset: 124;
+    }
+}

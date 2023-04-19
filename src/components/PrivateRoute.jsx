@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { history } from 'helper'
+import { history } from 'helpers'
 
 export { PrivateRoute }
 

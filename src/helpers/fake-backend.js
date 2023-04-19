@@ -4,7 +4,21 @@ export { fakeBackend }
 const usersKey = 'liam-users'
 const recordsKey = 'liam-records'
 let users = JSON.parse(localStorage.getItem(usersKey)) || [{id: 1, username: 'test', password: 'test', noti: 1}]
-let records = JSON.parse(localStorage.getItem(recordsKey)) || [{id: 1, image: 1, title: 'test', content: 'test'}]
+let records = JSON.parse(localStorage.getItem(recordsKey)) || 
+    [
+        {id: 1, image: './images/m01.png', title: 'test1', content: '05.21.Morning'},
+        {id: 2, image: './images/m01.png', title: 'test2', content: '05.21.Lunch'},
+        {id: 3, image: './images/m01.png', title: 'test3', content: '05.21.Dinner'},
+        {id: 4, image: './images/m01.png', title: 'test4', content: '05.21.Snack'},
+        {id: 5, image: './images/m01.png', title: 'test5', content: '05.21.Morning'},
+        {id: 6, image: './images/m01.png', title: 'test6', content: '05.21.Lunch'},
+        {id: 7, image: './images/m01.png', title: 'test7', content: '05.21.Dinner'},
+        {id: 8, image: './images/m01.png', title: 'test8', content: '05.21.Snack'},
+        {id: 9, image: './images/m01.png', title: 'test9', content: '05.21.Morning'},
+        {id: 10, image: './images/m01.png', title: 'test10', content: '05.21.Lunch'},
+        {id: 11, image: './images/m01.png', title: 'test11', content: '05.21.Dinner'},
+        {id: 12, image: './images/m01.png', title: 'test12', content: '05.21.Snack'},
+    ]
 
 function fakeBackend() {
     let realFetch = window.fetch
@@ -12,7 +26,8 @@ function fakeBackend() {
         return new Promise((resolve, reject) => {
             // wrap in timeout to simulate server api call
             setTimeout(handleRoute, 500)
-
+            // const regex = /page=(\d+)&size=(\d+)/
+        
             function handleRoute() {
                 switch (true) {
                     case url.endsWith('/users/authenticate') && opts.method === 'POST':
@@ -20,6 +35,8 @@ function fakeBackend() {
                     case url.endsWith('/users/register') && opts.method === 'POST':
                         return register()
                     case url.endsWith('/records') && opts.method === 'GET':
+                        return getRecords()
+                    case url.match(/\/records\/page\/\d+$/) && opts.method === 'GET':
                         return getRecords()
                     case url.endsWith('/users') && opts.method === 'GET':
                         return getUsers()
@@ -65,11 +82,16 @@ function fakeBackend() {
             }
 
             function getRecords() {
+                const page = idFromUrl() || 1
                 if (!isAuthenticated()) return unauthorized()
-                return ok(records)
+                const start = (page - 1) * 8
+                const end = start + 8
+                const data = records.slice(start, end)
+                return ok({data, page})
             }
 
             function getUsers() {
+                console.log('getUsers')
                 if (!isAuthenticated()) return unauthorized()
                 return ok(users.map(x => basicDetails(x)))
             }

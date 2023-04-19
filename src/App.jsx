@@ -1,10 +1,10 @@
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom'
-import { history } from 'helper'
-import { Header, Footer, Alert, PrivateRoute } from 'component'
-import { Home } from 'page/home'
-import { AccountLayout } from 'page/account'
-import { RecordLayout } from 'page/record'
-import { UserLayout } from 'page/user'
+import { history } from 'helpers'
+import { Header, Footer, BackToTop, PrivateRoute } from 'components'
+import { Home } from 'pages/home'
+import { AccountLayout } from 'pages/account'
+import { RecordLayout } from 'pages/record'
+import { UserLayout } from 'pages/user'
 
 export { App }
 
@@ -17,7 +17,7 @@ function App() {
     return (
         <div className="app-container bg-light">
             <Header />
-            <Alert />
+            <BackToTop />
             <div className="main">
                 <Routes>
                     {/* private */}

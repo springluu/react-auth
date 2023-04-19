@@ -4,8 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as Yup from 'yup'
 import { useDispatch } from 'react-redux'
 
-import { history } from 'helper'
-import { userActions, alertActions } from 'store'
+import { history } from 'helpers'
+import { userActions, alertActions } from 'stores'
 
 export { Register }
 

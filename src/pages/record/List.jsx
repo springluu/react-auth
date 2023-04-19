@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { userActions } from 'store'
+import { userActions } from 'stores'
 
 export { List }
 
@@ -16,7 +16,7 @@ function List() {
 
     return (
         <div>
-            <h1>Users</h1>
+            <h1>Records</h1>
             <Link to="add" className="btn btn-sm btn-success mb-2">Add User</Link>
             <table className="table table-striped">
                 <thead>

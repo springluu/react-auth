@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-import { alertActions } from 'store'
-import { history, fetchWrapper } from 'helper'
+import { alertActions } from 'stores'
+import { history, fetchWrapper } from 'helpers'
 
 // create slice
 
