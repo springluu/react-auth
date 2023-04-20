@@ -1,9 +1,10 @@
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom'
 import { history } from 'helpers'
 import { Header, Footer, BackToTop, PrivateRoute } from 'components'
-import { Home } from 'pages/home'
+import { Home } from 'pages/Home'
 import { AccountLayout } from 'pages/account'
-import { RecordLayout } from 'pages/record'
+import { Record } from 'pages/Record'
+import { Column } from 'pages/Column'
 import { UserLayout } from 'pages/user'
 
 export { App }
@@ -24,7 +25,8 @@ function App() {
                     <Route element={<PrivateRoute />}>
                         <Route path="/" element={<Home />} />
                         <Route path="users/*" element={<UserLayout />} />
-                        <Route path="records/*" element={<RecordLayout />} />
+                        <Route path="records" element={<Record />} />
+                        <Route path="columns" element={<Column />} />
                     </Route>
                     {/* public */}
                     <Route path="account/*" element={<AccountLayout />} />

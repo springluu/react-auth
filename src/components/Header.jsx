@@ -26,8 +26,8 @@ function Header() {
             <div className="navbar-nav container">
                 <NavLink to="/" className="nav-item nav-link logo"><Logo/></NavLink>
                 <NavLink to="/records" className="nav-item nav-link ml-auto"><Memo/>自分の記録</NavLink>
-                <NavLink to="/users" className="nav-item nav-link"><Challenge/>チャレンジ</NavLink>
-                <NavLink to="/info" className="nav-item nav-link"><Info/>お知らせ<span className='count'>{auth.noti}</span></NavLink> 
+                <NavLink to="/no" className="nav-item nav-link"><Challenge/>チャレンジ</NavLink>
+                <NavLink to="/no" className="nav-item nav-link"><Info/>お知らせ<span className='count'>{auth.noti || 0}</span></NavLink>
                 <button onClick={openMenu} className="btn btn-menu nav-item nav-link">
                     {menu ? <Close/> : <IconMenu/>}
                 </button>

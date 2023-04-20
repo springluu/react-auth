@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { recordActions } from 'stores'
 import { LineChart } from 'components'
 import { Circle } from 'components'
-import { ReactComponent as Knife } from '../../assets/svgs/icon_knife.svg'
-import { ReactComponent as Cup } from '../../assets/svgs/icon_cup.svg'
+import { ReactComponent as Knife } from '../assets/svgs/icon_knife.svg'
+import { ReactComponent as Cup } from '../assets/svgs/icon_cup.svg'
 
 export { Home }
 
@@ -30,7 +29,7 @@ function Home() {
                 <div className='section-left'>
                     <img src="./images/home1.png" alt="home1" />
                     <div className='content'>
-                        <Circle percent={50} content="75%"/>
+                        <Circle percent={75} content="05/21"/>
                     </div>
                 </div>
                 <div className='section-right'>

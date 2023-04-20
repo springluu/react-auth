@@ -1,20 +1,19 @@
 function Circle(props) {
+  const dashoffset = 2 * 3.14 * 80
+  const dashArray = dashoffset * (100 - props.percent) / 100
 
-
-    const calculateTimeFraction = () => {
-        const rawTimeFraction = 75 / 100
-        return rawTimeFraction - (1 / 100) * (1 - rawTimeFraction)
-      }
-    
-      const dashArray = `${(
-        calculateTimeFraction() * 283
-      ).toFixed(0)} 283`
-
-    return (
-        <svg viewBox="0 0 45 45">
-            <circle cx="50" cy="50" r="45" stroke="#000" stroke-width="10" fill="none" stroke-dasharray={dashArray} stroke-dashoffset={283} />
-        </svg>
-    )
+  return (
+    <div className="circle">
+      <svg width="180" height="180">
+        <circle cx="90" cy="90" r="80" fill="none" stroke="#fff" stroke-width="5"
+          stroke-dasharray={dashoffset} stroke-dashoffset={dashArray} />
+      </svg>
+      <div className="circle-text">
+        <span>{props.content}</span>
+        <span className="percent">{`${props.percent}%`}</span>
+      </div>
+    </div>
+  )
 }
 
 export { Circle }

@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { List, AddEdit } from '../record'
+import { List, AddEdit } from '../user'
 
 export { UserLayout }
 
